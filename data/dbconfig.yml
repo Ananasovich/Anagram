@@ -1,0 +1,5 @@
+dev:
+  dialect: postgres
+  datasource: host=localhost dbname=anagram user=anagram password=123456 sslmode=disable
+  dir: data
+  table: migrations
