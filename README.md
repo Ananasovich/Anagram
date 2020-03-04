@@ -4,8 +4,8 @@
 
 Для запуска локально выполните скрипт ./run_local.sh
 Для корректной отработки скрипта требуются:
-https://github.com/rubenv/sql-migrate
-https://www.docker.com/
+* https://github.com/rubenv/sql-migrate
+* https://www.docker.com/
 
 Примеры использования:
 * Загрузка слов: `curl -d "[\"foo\", \"bar\"]" 127.0.0.1:8090/v1/words`
