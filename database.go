@@ -8,6 +8,13 @@ VALUES ($1, $2)
 ON CONFLICT DO NOTHING;
 
 `
+
+	selectAnagramsQuery = `
+SELECT word
+FROM words
+WHERE letters = $1
+  AND word != $2;
+`
 )
 
 func insertWords(words []string, letters []string) error {
@@ -20,4 +27,11 @@ func insertWords(words []string, letters []string) error {
 		}
 	}
 	return nil
+}
+
+func searchForAnagram(letters, word string) ([]string, error) {
+	var words []string
+
+	err := conn.Select(&words, selectAnagramsQuery, letters, word)
+	return words, err
 }
